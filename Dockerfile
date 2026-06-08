@@ -7,6 +7,9 @@ COPY mvnw.cmd .
 COPY .mvn .mvn
 COPY pom.xml .
 
+# Asegurar permiso de ejecucion (necesario en Railway/Linux)
+RUN chmod +x mvnw
+
 # Descarga dependencias primero (cache layer)
 RUN ./mvnw dependency:go-offline -q
 
