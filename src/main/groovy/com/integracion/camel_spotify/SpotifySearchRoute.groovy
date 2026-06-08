@@ -23,13 +23,13 @@ class SpotifySearchRoute extends RouteBuilder {
                 def type  = exchange.in.getHeader('type', 'track', String)
                 def token = tokenService.getAccessToken()
 
-                exchange.in.setHeader('Authorization', "Bearer ${token}")
+                exchange.in.setHeader('Authorization', "Bearer ${token}".toString())
                 exchange.in.setHeader('CamelHttpMethod', 'GET')
                 exchange.in.setHeader('CamelHttpQuery',
-                    "q=${URLEncoder.encode(query, 'UTF-8')}&type=${type}&limit=10")
+                    "q=${URLEncoder.encode(query, 'UTF-8')}&type=${type}&limit=10".toString())
                 exchange.in.body = null
             }
-            .toD("${apiUrl}/search?bridgeEndpoint=true")
+            .toD((apiUrl + '/search?bridgeEndpoint=true').toString())
             .log('Spotify respondio: ${header.CamelHttpResponseCode}')
     }
 }
