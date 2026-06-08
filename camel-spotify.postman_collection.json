@@ -1,0 +1,218 @@
+{
+  "info": {
+    "name": "Camel Spotify API",
+    "description": "Colección para probar la integración de Spotify API con Apache Camel + Spring Boot",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url_cloud",
+      "value": "https://merry-spirit-production-08fd.up.railway.app",
+      "type": "string"
+    },
+    {
+      "key": "base_url_local",
+      "value": "http://localhost:8080",
+      "type": "string"
+    },
+    {
+      "key": "base_url",
+      "value": "https://merry-spirit-production-08fd.up.railway.app",
+      "type": "string",
+      "description": "Cambia este valor entre base_url_cloud y base_url_local"
+    }
+  ],
+  "item": [
+    {
+      "name": "Tracks",
+      "item": [
+        {
+          "name": "Buscar tracks - Radiohead",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/spotify/search?q=radiohead&type=track",
+              "host": ["{{base_url}}"],
+              "path": ["api", "spotify", "search"],
+              "query": [
+                { "key": "q", "value": "radiohead" },
+                { "key": "type", "value": "track" }
+              ]
+            },
+            "description": "Busca las 10 canciones más relevantes de Radiohead"
+          }
+        },
+        {
+          "name": "Buscar tracks - Daft Punk",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/spotify/search?q=daft+punk&type=track",
+              "host": ["{{base_url}}"],
+              "path": ["api", "spotify", "search"],
+              "query": [
+                { "key": "q", "value": "daft punk" },
+                { "key": "type", "value": "track" }
+              ]
+            },
+            "description": "Busca las 10 canciones más relevantes de Daft Punk"
+          }
+        },
+        {
+          "name": "Buscar tracks - Coldplay",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/spotify/search?q=coldplay&type=track",
+              "host": ["{{base_url}}"],
+              "path": ["api", "spotify", "search"],
+              "query": [
+                { "key": "q", "value": "coldplay" },
+                { "key": "type", "value": "track" }
+              ]
+            },
+            "description": "Busca las 10 canciones más relevantes de Coldplay"
+          }
+        },
+        {
+          "name": "Buscar tracks - Custom",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/spotify/search?q=&type=track",
+              "host": ["{{base_url}}"],
+              "path": ["api", "spotify", "search"],
+              "query": [
+                { "key": "q", "value": "", "description": "Escribi el artista o canción acá" },
+                { "key": "type", "value": "track" }
+              ]
+            },
+            "description": "Búsqueda personalizada de tracks — completá el campo q"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Artists",
+      "item": [
+        {
+          "name": "Buscar artista - Taylor Swift",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/spotify/search?q=taylor+swift&type=artist",
+              "host": ["{{base_url}}"],
+              "path": ["api", "spotify", "search"],
+              "query": [
+                { "key": "q", "value": "taylor swift" },
+                { "key": "type", "value": "artist" }
+              ]
+            },
+            "description": "Busca artistas con el nombre Taylor Swift"
+          }
+        },
+        {
+          "name": "Buscar artista - Drake",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/spotify/search?q=drake&type=artist",
+              "host": ["{{base_url}}"],
+              "path": ["api", "spotify", "search"],
+              "query": [
+                { "key": "q", "value": "drake" },
+                { "key": "type", "value": "artist" }
+              ]
+            },
+            "description": "Busca artistas con el nombre Drake"
+          }
+        },
+        {
+          "name": "Buscar artista - Custom",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/spotify/search?q=&type=artist",
+              "host": ["{{base_url}}"],
+              "path": ["api", "spotify", "search"],
+              "query": [
+                { "key": "q", "value": "", "description": "Escribi el nombre del artista acá" },
+                { "key": "type", "value": "artist" }
+              ]
+            },
+            "description": "Búsqueda personalizada de artistas — completá el campo q"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Albums",
+      "item": [
+        {
+          "name": "Buscar album - Thriller",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/spotify/search?q=thriller&type=album",
+              "host": ["{{base_url}}"],
+              "path": ["api", "spotify", "search"],
+              "query": [
+                { "key": "q", "value": "thriller" },
+                { "key": "type", "value": "album" }
+              ]
+            },
+            "description": "Busca álbumes con el nombre Thriller"
+          }
+        },
+        {
+          "name": "Buscar album - OK Computer",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/spotify/search?q=ok+computer&type=album",
+              "host": ["{{base_url}}"],
+              "path": ["api", "spotify", "search"],
+              "query": [
+                { "key": "q", "value": "ok computer" },
+                { "key": "type", "value": "album" }
+              ]
+            },
+            "description": "Busca el álbum OK Computer de Radiohead"
+          }
+        },
+        {
+          "name": "Buscar album - Discovery",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/spotify/search?q=discovery+daft+punk&type=album",
+              "host": ["{{base_url}}"],
+              "path": ["api", "spotify", "search"],
+              "query": [
+                { "key": "q", "value": "discovery daft punk" },
+                { "key": "type", "value": "album" }
+              ]
+            },
+            "description": "Busca el álbum Discovery de Daft Punk"
+          }
+        },
+        {
+          "name": "Buscar album - Custom",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/spotify/search?q=&type=album",
+              "host": ["{{base_url}}"],
+              "path": ["api", "spotify", "search"],
+              "query": [
+                { "key": "q", "value": "", "description": "Escribi el nombre del álbum acá" },
+                { "key": "type", "value": "album" }
+              ]
+            },
+            "description": "Búsqueda personalizada de álbumes — completá el campo q"
+          }
+        }
+      ]
+    }
+  ]
+}
